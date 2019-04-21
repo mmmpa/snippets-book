@@ -17,7 +17,6 @@ jobs:
           key: project-cache
           paths:
             - "./node_modules"
-            - "./out"
 
   deploy:
     docker:
@@ -31,16 +30,10 @@ jobs:
             source $BASH_ENV
 
       - checkout
-      - restore_cache:
-          key: project-cache
 
+      - run: yarn build
       - run: cd deployment && yarn install
       - run: cd deployment && yarn deploy
-
-      - save_cache:
-          key: project-cache
-          paths:
-            - "./deployment/node_modules"
 
 workflows:
   version: 2

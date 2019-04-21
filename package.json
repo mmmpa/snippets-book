@@ -41,6 +41,7 @@
     "storybook": "start-storybook",
     "lint": "eslint stories/**/*.{ts,tsx,js}",
     "lint:fix": "eslint --fix stories/**/*.{ts,tsx,js}",
+    "build": "build-storybook -c .storybook -o .out",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mmmpa <mmmpa.mmmpa@gmail.com> (http://mmmpa.net)",

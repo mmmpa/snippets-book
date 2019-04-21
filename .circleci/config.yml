@@ -30,11 +30,19 @@ jobs:
             source $BASH_ENV
 
       - checkout
+      - restore_cache:
+          key: deploy-cache
 
       - run: yarn install
       - run: yarn build
       - run: cd deployment && yarn install
       - run: cd deployment && yarn deploy
+
+      - save_cache:
+          key: deploy-cache
+          paths:
+            - "./node_modules"
+            - "./deployment/node_modules"
 
 workflows:
   version: 2

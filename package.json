@@ -39,8 +39,8 @@
   },
   "scripts": {
     "storybook": "start-storybook",
-    "lint": "eslint stories/**/*.{ts,tsx,js}",
-    "lint:fix": "eslint --fix stories/**/*.{ts,tsx,js}",
+    "lint": "eslint stories/**/*.{ts,tsx}",
+    "lint:fix": "eslint --fix stories/**/*.{ts,tsx}",
     "build": "build-storybook -c .storybook -o .out",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
